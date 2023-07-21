@@ -141,27 +141,4 @@ value="<?php if(isset($_GET['psw'])) echo $_GET['psw']?>">
 </body>
 </html>
 
-<?php
-if(isset($_GET['sub']))
-{
-	$a=$_GET['uname'];
-	$b=$_GET['psw'];
-	
-$c=mysqli_connect("localhost","root","","jagruti")or die("error in connection");
-$rows=mysqli_query($c,"SELECT * FROM `register` where Email_id='$a' AND Password='$b'")or die("Error in eidpad query");
 
-if(mysqli_num_rows($rows)>=1)
-{
-	
-		echo "SUCCESS";
-}
-else
-{
-		echo "Login Fail!!!!!";
-}
-}
-if(isset($_GET['reg']))
-{
-	echo "<a href='reg.php'></a>";
-}
-?>
